@@ -1,40 +1,106 @@
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+  }
+
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #f8f9fa;
+  }
 }
 
-body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
-  -webkit-font-smoothing: antialiased;
-  background-color: #f8f9fa;
+@layer components {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+
+  .card {
+    @apply bg-white rounded-xl p-6 shadow-lg border border-gray-100 mb-6;
+  }
+
+  .btn {
+    @apply px-6 py-3 rounded-lg font-medium transition-all duration-200 cursor-pointer;
+  }
+
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700 focus:ring-4 focus:ring-blue-200;
+  }
+
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700 focus:ring-4 focus:ring-green-200;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-100 text-gray-700 border-2 border-gray-300 hover:bg-gray-200;
+  }
+
+  .input-field {
+    @apply w-full p-3 border-2 border-gray-200 rounded-lg text-sm focus:border-blue-500 focus:outline-none transition-colors;
+  }
+
+  .input-error {
+    @apply border-red-500 focus:border-red-500;
+  }
+
+  .error-message {
+    @apply text-red-500 text-xs mt-1;
+  }
+
+  .crypto-card {
+    @apply flex items-center p-3 border border-gray-200 rounded-lg cursor-pointer hover:bg-gray-50 transition-colors;
+  }
+
+  .crypto-card.selected {
+    @apply bg-blue-50 border-blue-300;
+  }
+
+  .discount-tier {
+    @apply text-center p-3 bg-gray-50 rounded-lg border border-gray-200;
+  }
+
+  .verification-card {
+    @apply text-center p-6 border-2 border-dashed border-gray-300 rounded-xl cursor-pointer hover:border-blue-400 transition-colors;
+  }
+
+  .step-indicator {
+    @apply bg-blue-100 text-blue-600 rounded-full w-8 h-8 flex items-center justify-center text-sm font-bold mr-4 mt-1;
+  }
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 0.5rem;
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .discount-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 0.75rem;
+  }
 }
-
-.card {
-  background: white;
-  border-radius: 12px;
-  padding: 24px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-  margin-bottom: 24px;
-}
-
-.btn {
-  padding: 12px 24px;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  transition: all 0.2s;
-}
-
-.btn-primary { background: #007bff; color: white; }
-.btn-primary:hover { background: #0056b3; }
-
-.btn-success { background: #28a745; color: white; }
-.btn-success:hover { background: #1e7e34; }
