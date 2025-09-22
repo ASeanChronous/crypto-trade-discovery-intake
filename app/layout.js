@@ -1,4 +1,4 @@
-import './globals.css'  // ← This line is CRITICAL
+import './globals.css'
 
 export const metadata = {
   title: 'Crypto Trade Discovery Intake',
