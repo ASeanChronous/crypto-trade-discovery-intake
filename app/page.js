@@ -1,6 +1,6 @@
 'use client'
-import CompleteCryptoPlatform from '../components/CryptoTradeDiscoveryIntake'
+import CryptoTradeDiscoveryIntake from '../components/CryptoTradeDiscoveryIntake'
 
 export default function Home() {
-  return <CompleteCryptoPlatform />
+  return <CryptoTradeDiscoveryIntake />
 }
