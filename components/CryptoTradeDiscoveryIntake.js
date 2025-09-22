@@ -1657,4 +1657,4 @@ const CompleteCryptoPlatform = () => {
   );
 };
 
-export default CompleteCryptoPlatform;
+export default CryptoTradeDiscoveryIntake;
